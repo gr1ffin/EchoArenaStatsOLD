@@ -33,7 +33,7 @@
   ],
   "last_throw": {
     "arm_speed": 0.0,
-    "total_speed": 0.0,
+    "total_speed": 6.9,
     "off_axis_spin_deg": 0.0,
     "wrist_throw_penalty": 0.0,
     "rot_per_sec": 0.0,
@@ -141,7 +141,7 @@
             "possession_time": 8.9302616,
             "points": 0,
             "saves": 1,
-            "goals": 0,
+            "goals": 9,
             "stuns": 3,
             "passes": 0,
             "catches": 0,

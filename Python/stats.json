@@ -33,7 +33,7 @@
   ],
   "last_throw": {
     "arm_speed": 0.0,
-    "total_speed": 6.9,
+    "total_speed": 0.0,
     "off_axis_spin_deg": 0.0,
     "wrist_throw_penalty": 0.0,
     "rot_per_sec": 0.0,

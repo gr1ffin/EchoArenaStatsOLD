@@ -1,2 +1,2 @@
 # EchoArenaStats
- Stats finder/logger for Echo Arena
+ Stats finder/logger for main Arena
