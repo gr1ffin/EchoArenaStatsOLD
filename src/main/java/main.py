@@ -1,6 +1,16 @@
 import json
 
 import echovr_api
+import requests
+
+URL = "http://127.0.0.1:6721/session"
+
+location = "The Arena"
+
+PARAMS = {'address':location}
+
+r = requests.get(url = URL, params = PARAMS)
+
 
 try:
     game_state = echovr_api.fetch_state()
@@ -13,10 +23,10 @@ try:
         print("round end")
 
 except ConnectionError as e:
-    # main VR is not running, or you didn't pass the -http parameter when
+    # ImportJSON VR is not running, or you didn't pass the -http parameter when
     # starting it.
     print("lol")
 except json.decoder.JSONDecodeError as e:
-    # main VR is currently not in an Arena match
+    # ImportJSON VR is currently not in an Arena match
     print('fail')
 
