@@ -23,10 +23,10 @@ try:
         print("round end")
 
 except ConnectionError as e:
-    # ImportJSON VR is not running, or you didn't pass the -http parameter when
+    # Methods.ImportJSON VR is not running, or you didn't pass the -http parameter when
     # starting it.
     print("lol")
 except json.decoder.JSONDecodeError as e:
-    # ImportJSON VR is currently not in an Arena match
+    # Methods.ImportJSON VR is currently not in an Arena match
     print('fail')
 
