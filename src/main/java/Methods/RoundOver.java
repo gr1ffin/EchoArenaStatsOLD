@@ -41,6 +41,6 @@ public class RoundOver {
             else {
                 userTeam = "SPECTATOR";
             }
-            winRate = (float) ((wins*100)/totalGames);
+            winRate = (float) ((wins*100)/totalGames); // Win Rate Calculation
         }
 }

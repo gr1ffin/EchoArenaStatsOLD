@@ -1,5 +1,3 @@
-import Methods.ImportJSON;
-
 import javax.json.*;
 import java.io.FileInputStream;
 import java.io.InputStream;
@@ -8,9 +6,10 @@ import java.io.InputStream;
 import static Methods.Averages.avgFinder;
 import static Methods.PlayerData.*;
 import static Methods.PlayerLocation.*;
+import static Methods.PullJSON.pullJson;
 import static Methods.RoundOver.onRoundEnd;
 import static Methods.RoundOver.totalGames;
-import static Methods.ImportJSON.*;
+import static Methods.FlattenJSON.*;
 
 public class EchoMain {
     public static String clientName;
@@ -27,10 +26,13 @@ public class EchoMain {
         System.out.println(clientName);
 
         // Call Methods
+        pullJson();
+        flattenJSON();
         findPlayer(flattenLocation);
         getData(flattenLocation, teamNum, userNum);
         onRoundEnd(flattenLocation, teamNum);
         avgFinder(points, assists, stuns, saves, totalGames);
+
     }
 }
 

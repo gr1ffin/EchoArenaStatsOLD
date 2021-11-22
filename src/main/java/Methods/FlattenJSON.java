@@ -5,10 +5,11 @@ import com.github.wnameless.json.flattener.JsonFlattener;
 import java.io.*;
 import java.util.Map;
 
-public class ImportJSON {
+public class FlattenJSON {
+    // Flattens JSON from arrays/nested into objects.
     public static String jsonLocation = "C:\\Users\\agent\\IdeaProjects\\EchoArenaStats\\src\\main\\java\\json\\stats.json";
     public static String flattenLocation = "C:\\Users\\agent\\IdeaProjects\\EchoArenaStats\\src\\main\\java\\json\\flattened.json";
-    public static void importJSON() throws Exception {
+    public static void flattenJSON() throws Exception {
         InputStream inputStream = new FileInputStream(jsonLocation);
         Reader reader = new InputStreamReader(inputStream);
 

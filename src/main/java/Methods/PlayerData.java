@@ -17,6 +17,7 @@ public class PlayerData {
     public static String userName;
 
     public static void getData(String loc, int team, int user) throws Exception {
+        // Pulls player Data from JSON
         InputStream file = new FileInputStream(loc);
         JsonReader jsonReader = Json.createReader(file);
         JsonObject object = (JsonObject) jsonReader.readObject();

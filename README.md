@@ -1,2 +1,2 @@
 # EchoArenaStats
- Stats finder/logger for Methods.ImportJSON Arena
+ Stats finder/logger for Methods.FlattenJSON Arena

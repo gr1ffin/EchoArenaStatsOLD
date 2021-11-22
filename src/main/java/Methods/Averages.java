@@ -7,6 +7,7 @@ public class Averages {
     public static double avgSPG = 0;
 
     public static void avgFinder(double p, double a, double st, double s, double t) {
+        // Simple calculations for Points/Saves/Stuns/Assists per game.
         avgPPG = p/t;
         avgAPG = a/t;
         avgStPG = st/t;

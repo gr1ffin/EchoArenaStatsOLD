@@ -13,6 +13,7 @@ public class PlayerLocation {
     public static int userNum;
     public static int teamNum;
     public static void findPlayer(String loc) throws Exception{
+        // Finds right player in JSON by Team and Player index.
         InputStream file = new FileInputStream(loc);
         JsonReader jsonReader = Json.createReader(file);
         JsonObject object = (JsonObject) jsonReader.readObject();
