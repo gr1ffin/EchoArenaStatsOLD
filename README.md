@@ -1,2 +1,4 @@
 # EchoArenaStats
- Stats finder/logger for Methods.FlattenJSON Arena
+Stats logger for Echo Arena. 
+
+Will save continously, or throughout a specific period (manual reset).
