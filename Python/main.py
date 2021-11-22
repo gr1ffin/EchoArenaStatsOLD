@@ -1,8 +1,21 @@
-import json
+import echovr_api
 
+try:
+    game_state = echovr_api.fetch_state()
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    data = json.re
+    print(f"Game status: {game_state.game_status}")
+    print(f"Seconds on clock: {game_state.game_clock}")
+    print(f"Score: {game_state.blue_team.score} - {game_state.orange_team.score}")
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    if game_state.game_status == game_state.game_status.round_end:
+        print("round end")
+        # Put code here to run method that updates a .json file that is read by another program
+
+except ConnectionError as e:
+    # ECHO VR is not running, or you didn't pass the -http parameter when
+    # starting it.
+    print("lol")
+except json.decoder.JSONDecodeError as e:
+    # ECHO VR is currently not in an Arena match
+    print('fail')
+

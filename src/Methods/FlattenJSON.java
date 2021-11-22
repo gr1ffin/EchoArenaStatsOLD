@@ -9,8 +9,8 @@ public class FlattenJSON {
     // Flattens JSON from arrays/nested into objects.
     public static String jsonLocation = "C:\\Users\\agent\\IdeaProjects\\EchoArenaStats\\src\\main\\java\\json\\stats.json";
     public static String flattenLocation = "C:\\Users\\agent\\IdeaProjects\\EchoArenaStats\\src\\main\\java\\json\\flattened.json";
-    public static void flattenJSON() throws Exception {
-        InputStream inputStream = new FileInputStream(jsonLocation);
+    public static void flattenJSON(String initial, String writeTo) throws Exception {
+        InputStream inputStream = new FileInputStream(initial);
         Reader reader = new InputStreamReader(inputStream);
 
         JsonFlattener jf = new JsonFlattener(reader);
@@ -18,7 +18,7 @@ public class FlattenJSON {
         String newStr = removeChars(str);
 
         Map<String, Object> flattenJson = JsonFlattener.flattenAsMap(newStr);
-        FileWriter file = new FileWriter(flattenLocation);
+        FileWriter file = new FileWriter(writeTo);
         file.write(String.valueOf(flattenJson));
         file.close();
 
