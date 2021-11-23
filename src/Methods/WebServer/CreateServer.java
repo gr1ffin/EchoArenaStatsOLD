@@ -1,4 +1,4 @@
-package WebServer;
+package Methods.WebServer;
 
 import java.net.InetSocketAddress;
 
@@ -10,8 +10,7 @@ import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpServer;
 
 import static Methods.Averages.*;
-import static Methods.PlayerData.*;
-import static Methods.RoundOver.*;
+import static Methods.PastData.*;
 
 public class CreateServer {
     public static HttpServer server;
@@ -26,9 +25,8 @@ public class CreateServer {
         System.out.println("Server has been started at http://localhost:8000/");
     }
 
-    static void restartServer() throws Exception {
-        server.stop(1);
-        startServer();
+    public static void stopServer() throws Exception {
+        server.stop(5);
     }
 
     static class statsHandler implements HttpHandler {

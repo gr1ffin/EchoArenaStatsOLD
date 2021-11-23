@@ -6,12 +6,14 @@ import javax.json.JsonReader;
 import java.io.FileInputStream;
 import java.io.InputStream;
 
-public class RoundOver {
-        public static int wins = 0;
-        public static int losses = 0;
-        public static int totalGames = 0;
-        public static float winRate;
 
+import static Methods.PastData.*;
+
+
+public class RoundOver {
+
+
+    
         public static void onRoundEnd (String loc, int team) throws Exception {
             InputStream file = new FileInputStream(loc);
             JsonReader jsonReader = Json.createReader(file);

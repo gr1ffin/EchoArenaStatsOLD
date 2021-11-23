@@ -1,4 +1,7 @@
+import json
+
 import echovr_api
+
 
 try:
     game_state = echovr_api.fetch_state()
@@ -8,14 +11,9 @@ try:
     print(f"Score: {game_state.blue_team.score} - {game_state.orange_team.score}")
 
     if game_state.game_status == game_state.game_status.round_end:
-        print("round end")
-        # Put code here to run method that updates a .json file that is read by another program
+        # Run Code to get JSON file
 
 except ConnectionError as e:
-    # ECHO VR is not running, or you didn't pass the -http parameter when
-    # starting it.
-    print("lol")
+    print("Connection refused. Make sure you're running Echo VR with the -http option and that you're in a match.")
 except json.decoder.JSONDecodeError as e:
-    # ECHO VR is currently not in an Arena match
-    print('fail')
-
+    print("Could not decode response. (Not valid JSON.)")

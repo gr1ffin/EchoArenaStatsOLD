@@ -6,14 +6,16 @@ import javax.json.JsonReader;
 import java.io.FileInputStream;
 import java.io.InputStream;
 
+import static Methods.PastData.*;
+
 
 
 public class PlayerData {
 
-    public static int points = 0;
-    public static int stuns = 0;
-    public static int saves = 0;
-    public static int assists = 0;
+    public static int recentPoints = 0;
+    public static int recentStuns = 0;
+    public static int recentSaves = 0;
+    public static int recentAssists = 0;
     public static String userName;
 
     public static void getData(String loc, int team, int user) throws Exception {
@@ -22,10 +24,26 @@ public class PlayerData {
         JsonReader jsonReader = Json.createReader(file);
         JsonObject object = (JsonObject) jsonReader.readObject();
 
-        userName = object.getString("teams[" + team + "].players[" + user + "].name");
-        points = object.getInt("teams[" + team + "].players[" + user + "].stats.points");
-        stuns = object.getInt("teams[" + team + "].players[" + user + "].stats.stuns");
-        saves = object.getInt("teams[" + team + "].players[" + user + "].stats.saves");
-        assists = object.getInt("teams[" + team + "].players[" + user + "].stats.assists");
+
+        if (object.getString("teams[" + team + "].players[" + user + "].name") != null) {
+            userName = object.getString("teams[" + team + "].players[" + user + "].name");
+            System.out.println(userName);
+            recentPoints = object.getInt("teams[" + team + "].players[" + user + "].stats.points");
+            recentStuns = object.getInt("teams[" + team + "].players[" + user + "].stats.stuns");
+            recentSaves = object.getInt("teams[" + team + "].players[" + user + "].stats.saves");
+            recentAssists = object.getInt("teams[" + team + "].players[" + user + "].stats.assists");
+        }
+
+
+        System.out.println(userName);
+        System.out.println(recentPoints);
+        System.out.println(recentStuns);
+        System.out.println(recentSaves);
+        System.out.println(recentAssists);
+
+        points += recentPoints;
+        stuns += recentStuns;
+        saves += recentSaves;
+        assists += recentAssists;
     }
 }

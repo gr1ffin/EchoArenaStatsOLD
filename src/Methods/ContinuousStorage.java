@@ -9,6 +9,7 @@ import java.io.FileWriter;
 import static Methods.Averages.*;
 import static Methods.PlayerData.*;
 import static Methods.RoundOver.*;
+import static Methods.PastData.*;
 
 public class ContinuousStorage {
     public static String continuousLocation = "C:\\Users\\Public\\Documents\\EchoStatsLogger\\continuousStorage.json";

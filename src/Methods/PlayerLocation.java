@@ -18,16 +18,17 @@ public class PlayerLocation {
         JsonReader jsonReader = Json.createReader(file);
         JsonObject object = (JsonObject) jsonReader.readObject();
         String clientName = object.getString("client_name");
+        System.out.println(clientName);
 
 
         for (int a = 0; a < 2; a++) {
-            for (int b = 0; b < 4; b++) {
+            for (int b = 0; b < 3; b++) {
                 String toCheck = "teams[" + a + "].players[" + b + "].name";
-                if (Objects.equals(String.valueOf(object.getString(toCheck)), object.getString("client_name"))) {
+                System.out.println(toCheck);
+                if (Objects.equals(String.valueOf(object.getString(toCheck)), clientName)) {
                     teamNum = a;
                     userNum = b;
                     System.out.println("Player is on team " + teamNum + ".\nPlayer is number " + userNum + ".");
-                    System.out.println(toCheck);
                 }
             }
         }
