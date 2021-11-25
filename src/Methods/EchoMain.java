@@ -10,6 +10,7 @@ import java.util.concurrent.TimeUnit;
 import static Methods.Averages.avgFinder;
 import static Methods.ChangeMonitor.fileMonitor;
 import static Methods.ContinuousStorage.continuousMethod;
+import static Methods.EndMonitor.roundMonitor;
 import static Methods.FlattenJSON.*;
 import static Methods.PlayerData.*;
 import static Methods.PlayerLocation.*;
@@ -23,7 +24,7 @@ public class EchoMain {
     public static String clientName;
 
     public static void main(String[] args) throws Exception {
-        initialMethod();
+        roundMonitor();
     }
 
     public static void initialMethod() throws Exception{

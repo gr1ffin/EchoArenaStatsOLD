@@ -21,7 +21,7 @@ public class PastData {
     public static int saves;
 
     public static void getPastData() throws FileNotFoundException {
-        InputStream file = new FileInputStream("C:\\Users\\Public\\Documents\\EchoStatsLogger\\continuousStorage.json");
+        InputStream file = new FileInputStream("C:\\Users\\Public\\Public Documents\\EchoStatsLogger\\continuousStorage.json");
         JsonReader jsonReader = Json.createReaderFactory(null).createReader(file, java.nio.charset.StandardCharsets.UTF_8);
         JsonObject object = jsonReader.readObject();
 

@@ -16,9 +16,13 @@ import static Methods.ContinuousStorage.continuousLocation;
 
 public class InitialStorage {
     public static void createStorage() throws IOException {
-        Path path = Paths.get("C:\\Users\\Public\\Documents\\EchoStatsLogger\\continuousStorage.json");
-        Path path2 = Paths.get("C:\\Users\\Public\\Documents\\EchoStatsLogger\\stats.json");
-        Path path3 = Paths.get("C:\\Users\\Public\\Documents\\EchoStatsLogger\\flattened.json");
+        File theDir = new File("C:\\Users\\Public\\Public Documents\\EchoStatsLogger");
+        if (!theDir.exists()){
+            theDir.mkdirs();
+        }
+        Path path = Paths.get("C:\\Users\\Public\\Public Documents\\EchoStatsLogger\\continuousStorage.json");
+        Path path2 = Paths.get("C:\\Users\\Public\\Public Documents\\EchoStatsLogger\\stats.json");
+        Path path3 = Paths.get("C:\\Users\\Public\\Public Documents\\EchoStatsLogger\\flattened.json");
 
         try {
             Files.createFile(path);

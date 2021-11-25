@@ -9,9 +9,9 @@ import static java.nio.file.StandardWatchEventKinds.*;
 import static Methods.EchoMain.initialMethod;
 
 
-public class ChangeMonitor {
+public class EndMonitor {
 
-    public static void fileMonitor() {
+    public static void roundMonitor() {
         try {
             WatchService watcher = FileSystems.getDefault().newWatchService();
             Path dir = Paths.get("C:\\Users\\Public\\Public Documents\\EchoStatsLogger");
@@ -37,9 +37,8 @@ public class ChangeMonitor {
                     System.out.println(kind.name() + ": " + fileName);
 
                     if (kind == ENTRY_MODIFY &&
-                            fileName.toString().equals("continuousStorage.json")) {
+                            fileName.toString().equals("detectChange.txt")) {
                         System.out.println("Stats file has been modified.");
-                        stopServer();
                         initialMethod();
 
 

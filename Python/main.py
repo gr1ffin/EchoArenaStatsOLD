@@ -1,27 +1,25 @@
-import json
-import echovr_api
+import requests
+import time
+apiData = None
 
-try:
-    game_state = echovr_api.fetch_state()
 
-    print(f"Game status: {game_state.game_status}")
-    print(f"Seconds on clock: {game_state.game_clock}")
-
-    if (game_state.blue_team.score > game_state.orange_team.score):
-        print("Blue team is winning!")
-    elif (game_state.orange_team.score > game_state.blue_team.score):
-        print("Orange team is winning!")
+def requests_api():
+    global apiData
+    req = requests.get("http://127.0.0.1:6721/session")
+    if req.status_code == 200:
+        apiData = req.json()
     else:
-        print("It's tied!")
+        print(req.status_code)
 
-    print(f"Score: {game_state.blue_team.score} - {game_state.orange_team.score}")
-
-except ConnectionError as e:
-    print("Connection refused. Make sure you're running Echo VR with the -http option and that you're in a match.")
-except json.decoder.JSONDecodeError as e:
-    print("Could not decode response. (Not valid JSON.)")
-
-   # if game_state.game_status == game_state.game_status.round_end:
-    #   url = "http://localhost:6724/stats"
-     #  response = urllib.request.urlopen(url)
-      #print (data)
+while True:
+    requests_api()
+    if apiData is None:
+        time.sleep(3)
+    else:
+        if "post_match" == apiData["game_status"]:
+            f = open("C:\\Users\\Public\\Public Documents\\\\EchoStatsLogger\\detectChange.txt", "a")
+            f.write(str(apiData))
+            f.close()
+            break
+        else:
+            time.sleep(.5)
