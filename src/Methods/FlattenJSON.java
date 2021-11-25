@@ -7,8 +7,8 @@ import java.util.Map;
 
 public class FlattenJSON {
     // Flattens JSON from arrays/nested into objects.
-    public static String jsonLocation = "C:\\Users\\agent\\IdeaProjects\\EchoArenaStats\\src\\json\\stats.json";
-    public static String flattenLocation = "C:\\Users\\agent\\IdeaProjects\\EchoArenaStats\\src\\json\\flattened.json";
+    public static String jsonLocation = "C:\\Users\\Public\\Documents\\EchoStatsLogger\\stats.json";
+    public static String flattenLocation = "C:\\Users\\Public\\Documents\\EchoStatsLogger\\flattened.json";
     public static void flattenJSON(String initial, String writeTo) throws Exception {
         InputStream inputStream = new FileInputStream(initial);
         Reader reader = new InputStreamReader(inputStream);

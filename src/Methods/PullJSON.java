@@ -8,9 +8,9 @@ import java.io.FileWriter;
 public class PullJSON {
     public static void pullJson() throws Exception {
         // Pulls JSON from API page
-        String json = ClientBuilder.newClient().target("http://localhost:6724/stats").request().accept(MediaType.APPLICATION_JSON).get(String.class);
+        String json = ClientBuilder.newClient().target("http://127.0.0.1:6721/session").request().accept(MediaType.APPLICATION_JSON).get(String.class);
         System.out.println(json);
-        FileWriter file = new FileWriter("C:\\Users\\agent\\IdeaProjects\\EchoArenaStats\\src\\main\\java\\json\\stats2.json");
+        FileWriter file = new FileWriter("C:\\Users\\Public\\Documents\\EchoStatsLogger\\stats.json");
         file.write(String.valueOf(json));
         file.close();
     }

@@ -17,7 +17,7 @@ public class RoundOver {
         public static void onRoundEnd (String loc, int team) throws Exception {
             InputStream file = new FileInputStream(loc);
             JsonReader jsonReader = Json.createReader(file);
-            JsonObject object = (JsonObject) jsonReader.readObject();
+            JsonObject object = jsonReader.readObject();
             String userTeam;
 
             if (team == 0) {

@@ -14,7 +14,7 @@ public class ChangeMonitor {
     public static void fileMonitor() {
         try {
             WatchService watcher = FileSystems.getDefault().newWatchService();
-            Path dir = Paths.get("C:\\Users\\agent\\IdeaProjects\\EchoArenaStats\\src\\json");
+            Path dir = Paths.get("C:\\Users\\Public\\Documents\\EchoStatsLogger");
             dir.register(watcher, ENTRY_CREATE, ENTRY_DELETE, ENTRY_MODIFY);
 
             System.out.println("Watch Service registered for dir: " + dir.getFileName());
@@ -37,7 +37,7 @@ public class ChangeMonitor {
                     System.out.println(kind.name() + ": " + fileName);
 
                     if (kind == ENTRY_MODIFY &&
-                            fileName.toString().equals("stats.json")) {
+                            fileName.toString().equals("continuousStorage.json")) {
                         System.out.println("Stats file has been modified.");
                         stopServer();
                         initialMethod();

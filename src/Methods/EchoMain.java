@@ -13,6 +13,7 @@ import static Methods.ContinuousStorage.continuousMethod;
 import static Methods.FlattenJSON.*;
 import static Methods.PlayerData.*;
 import static Methods.PlayerLocation.*;
+import static Methods.PullJSON.pullJson;
 import static Methods.RoundOver.onRoundEnd;
 import static Methods.WebServer.CreateServer.*;
 import static Methods.InitialStorage.createStorage;
@@ -27,7 +28,7 @@ public class EchoMain {
 
     public static void initialMethod() throws Exception{
         // Call Methods
-        //pullJson();
+        pullJson();
         createStorage();
         flattenJSON(jsonLocation, flattenLocation);
         findPlayer(flattenLocation);

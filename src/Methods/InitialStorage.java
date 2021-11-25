@@ -17,6 +17,8 @@ import static Methods.ContinuousStorage.continuousLocation;
 public class InitialStorage {
     public static void createStorage() throws IOException {
         Path path = Paths.get("C:\\Users\\Public\\Documents\\EchoStatsLogger\\continuousStorage.json");
+        Path path2 = Paths.get("C:\\Users\\Public\\Documents\\EchoStatsLogger\\stats.json");
+        Path path3 = Paths.get("C:\\Users\\Public\\Documents\\EchoStatsLogger\\flattened.json");
 
         try {
             Files.createFile(path);
@@ -44,6 +46,16 @@ public class InitialStorage {
 
         } catch (FileAlreadyExistsException ex ) {
             System.out.println("File Already Exists");
+        }
+        try {
+            Files.createFile(path2);
+        } catch (FileAlreadyExistsException ex) {
+            System.out.println("File already Exists");
+        }
+        try {
+            Files.createFile(path3);
+        } catch (FileAlreadyExistsException ex) {
+            System.out.println("File already Exists");
         }
 
 
